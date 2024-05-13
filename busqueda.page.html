@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>busqueda por nombre</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <ion-searchbar
+    [debounce]="2000"
+    (ionInput)="handleInput($event)" />
+  <ion-list>
+  <ion-list>
+    <ion-item *ngFor="let lugar of resultadoBusqueda">
+      <ion-img [src]="lugar.strlugarThumb" />
+      <ion-label>{{ lugar.strschema}}</ion-label>
+      <ion-buttons slot="end">
+        <ion-button (click)="agregaAFavoritos(lugar)">
+          <ion-icon name="heart-outline" />
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+  </ion-list>
+  <ion-item *ngFor="let lugarFavorito of Favoritos">
+    <ion-img [src]="lugarFavorito.strlugarThumb" />
+    <ion-label>{{ lugarFavorito.strlugarThumb }}</ion-label>
+    </ion-item>
+  <ion-list>
+  
+  <ion-modal [isOpen]="isModalPriceOpen">
+    <ng-template>
+      <ion-header>
+      <ion-content>
+        <ion-input label="precio aprox." labelPlacement="stacked" />
+      <ion-content>
+    <ion-modal>
+    
+    
+        
+
+

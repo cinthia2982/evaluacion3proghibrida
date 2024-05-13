@@ -1,0 +1,7 @@
+export class categoria {
+
+    constructor (
+        public name: String,
+        public imagen: String = ""
+    ){}
+}
